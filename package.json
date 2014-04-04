@@ -1,5 +1,5 @@
 {
-  "name": "hummingbird",
+  "name": "fenestra",
   "description": "A node.js statistics server",
   "version": "0.2.0-17",
   "dependencies": {
@@ -8,16 +8,16 @@
     "geoip": "0.4.12"
   },
   "domains": [
-    "demo.hummingbirdstats.com"
+    "www.occa-home.co.uk"
   ],
   "repository": {
     "type": "git",
-    "url": "http://github.com/mnutt/hummingbird.git"
+    "url": "http://github.com/Occa-Labs/fenestra.git"
   },
   "engines": {
     "node": ">=0.6.0"
   },
-  "subdomain": "hummingbird",
+  "subdomain": "fenestra",
   "scripts": {
     "start": "node server.js"
   }
