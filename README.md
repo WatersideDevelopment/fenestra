@@ -56,7 +56,7 @@ to the outside world.
 Setting Up Tracking
 -------------------
 
-The file `client/fenestra.js` contains a small script to trigger a hummingbird event.  You
+The file `client/fenestra.js` contains a small script to trigger a fenestra event.  You
 can either paste the contents of the file into the body of your webpage or you can upload it
 to your server as a .js file and reference it with a `<script>` tag.  Once you have done so,
 in the footer of your page you can call
