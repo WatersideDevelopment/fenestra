@@ -19,6 +19,6 @@
   },
   "subdomain": "fenestra",
   "scripts": {
-    "start": "node server.js"
+    "start": "node fenestra.js"
   }
 }
