@@ -3,12 +3,6 @@ config = require('./lib/config');
 var dashboard = require('./lib/dashboard');
 var tracker = require('./lib/tracker');
 
-
-// Setup dashboard port listener
-dashboard.listen(config.dashboard_port, config.dashboard_address);
-console.log("Dashboard listening on http://" + (config.dashboard_address || "*") + ":" + config.dashboard_port + ".");
-
-
 // Setup tracker port listener...
 if (typeof config.tracking_port != 'number') {
     // Tracker should listen on the same port as the dashboard
