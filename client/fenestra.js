@@ -1,4 +1,4 @@
-HummingbirdTracker = {
+FenestraTracker = {
   track: function(env) {
     if(typeof(env) == "undefined") { env = {}; }
 
@@ -25,6 +25,6 @@ HummingbirdTracker = {
 
     // replace 'localhost:8080' with hummingbird's URL
     var img = new Image();
-    img.src = 'http://localhost:8080/tracking_pixel.gif?' + params.join('&');
+    img.src = '/fenestra/_.gif?' + params.join('&');
   }
 };
