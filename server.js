@@ -2,7 +2,6 @@ config = require('./lib/config');
 
 var dashboard = require('./lib/dashboard');
 var tracker = require('./lib/tracker');
-var demo = require('./lib/demo');
 
 
 // Setup dashboard port listener
