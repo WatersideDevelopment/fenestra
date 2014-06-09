@@ -1,6 +1,6 @@
-if(!Hummingbird) { var Hummingbird = {}; }
+if(!Fenestra) { var Fenestra = {}; }
 
-Hummingbird.Logger = function(element, socket, options) {
+Fenestra.Logger = function(element, socket, options) {
   this.element = element;
   this.socket = socket;
 
@@ -14,9 +14,9 @@ Hummingbird.Logger = function(element, socket, options) {
   this.initialize();
 };
 
-Hummingbird.Logger.prototype = new Hummingbird.Base();
+Fenestra.Logger.prototype = new Fenestra.Base();
 
-$.extend(Hummingbird.Logger.prototype, {
+$.extend(Fenestra.Logger.prototype, {
   name: "Logger",
   onMessage: function(message, average) {
     console.log("Minute Average: " + average.toFixed(this.options.decimalPlaces));

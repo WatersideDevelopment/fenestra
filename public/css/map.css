@@ -30,19 +30,19 @@ g.point:hover circle.point {
 }
 
 
-div.hummingbird_map .compass .back {
+div.fenestra_map .compass .back {
   fill: #eee;
   fill-opacity: .8;
   opacity: 0;
 }
 
-div.hummingbird_map .compass .fore {
+div.fenestra_map .compass .fore {
   stroke: #999;
   stroke-width: 1.5px;
   opacity: 0;
 }
 
-div.hummingbird_map .compass rect.back.fore {
+div.fenestra_map .compass rect.back.fore {
   fill: #999;
   fill-opacity: .3;
   stroke: #eee;
@@ -50,71 +50,71 @@ div.hummingbird_map .compass rect.back.fore {
   shape-rendering: crispEdges;
 }
 
-div.hummingbird_map .compass .direction {
+div.fenestra_map .compass .direction {
   fill: none;
 }
 
-div.hummingbird_map .compass .chevron {
+div.fenestra_map .compass .chevron {
   fill: none;
   stroke: #FFF;
   stroke-width: 5px;
 }
 
-div.hummingbird_map .compass .shadow {
+div.fenestra_map .compass .shadow {
   stroke: #000;
   stroke-width: 4px;
 }
 
-div.hummingbird_map .compass .zoom .chevron {
+div.fenestra_map .compass .zoom .chevron {
   stroke-width: 4px;
 }
 
-div.hummingbird_map .compass .active .chevron, .compass .chevron.active {
+div.fenestra_map .compass .active .chevron, .compass .chevron.active {
   stroke: #fff;
 }
 
-div.hummingbird_map .compass.active .active .direction {
+div.fenestra_map .compass.active .active .direction {
   fill: #999;
 }
 
-div.hummingbird_map circle.point {
+div.fenestra_map circle.point {
   fill-opacity: 1;
   fill: #FE4365;
   stroke: #000;
   stroke-width: 1px;
 }
 
-div.hummingbird_map circle.radius {
+div.fenestra_map circle.radius {
   fill-opacity: 0.5;
   fill: #0395FE;
 }
 
-div.hummingbird_map g.open circle {
+div.fenestra_map g.open circle {
   fill: #0395FE;
 }
 
-div.hummingbird_map g.cart_add circle {
+div.fenestra_map g.cart_add circle {
   fill: #16de16;
 }
 
-div.hummingbird_map text.label {
+div.fenestra_map text.label {
   font-size: 10px;
   fill: #FFF;
   font-weight: bold;
   text-anchor: middle;
 }
 
-div.hummingbird_map path.label {
+div.fenestra_map path.label {
   fill: rgba(40, 40, 40, 0.9);
   stroke: rgb(0,0,0);
   stroke-width: 0.5px;
 }
 
-div.hummingbird_map g.point:hover circle.point {
+div.fenestra_map g.point:hover circle.point {
   fill: #C90134;
 }
 
-div.hummingbird_map div.legend {
+div.fenestra_map div.legend {
   position: absolute;
   left: 10px;
   bottom: 7px;
@@ -125,13 +125,13 @@ div.hummingbird_map div.legend {
   text-shadow: 2px 2px 0 #000;
 }
 
-div.hummingbird_map div.legend div {
+div.fenestra_map div.legend div {
   position: relative;
   display: inline-block;
   margin-right: 1em;
 }
 
-div.hummingbird_map div.legend div span {
+div.fenestra_map div.legend div span {
   display: inline-block;
   width: 11px;
   height: 11px;
@@ -141,10 +141,10 @@ div.hummingbird_map div.legend div span {
   margin-right: 3px;
 }
 
-div.hummingbird_map div.legend div.open span {
+div.fenestra_map div.legend div.open span {
   background-color: #0395FE;
 }
 
-div.hummingbird_map div.legend div.cart_add span {
+div.fenestra_map div.legend div.cart_add span {
   background-color: #16de16;
 }

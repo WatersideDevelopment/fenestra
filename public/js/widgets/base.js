@@ -1,8 +1,8 @@
-if(!Hummingbird) { var Hummingbird = {}; }
+if(!Fenestra) { var Fenestra = {}; }
 
-Hummingbird.Base = function() {};
+Fenestra.Base = function() {};
 
-Hummingbird.Base.prototype = {
+Fenestra.Base.prototype = {
 
   messageCount: 0,
 
@@ -18,7 +18,7 @@ Hummingbird.Base.prototype = {
 
   startDisabled: function() {
     var _this = this;
-    var overlay = $("<div class='hummingbird_overlay'>Start Real-time Analytics</div>");
+    var overlay = $("<div class='fenestra_overlay'>Start Real-time Analytics</div>");
 
     this.element.css({position: 'relative'});
     this.element.append(overlay);

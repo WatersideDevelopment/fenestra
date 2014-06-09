@@ -64,7 +64,7 @@ h2.graph_title {
   margin-left: 58px;
 }
 
-div.hummingbird_graph div.graph {
+div.fenestra_graph div.graph {
   float: left;
   padding: 14px 0 20px 0;
   color: #F00;
@@ -75,8 +75,8 @@ div.hummingbird_graph div.graph {
   display: block;
 }
 
-div.hummingbird_graph div.axis_left,
-div.hummingbird_graph div.axis_right {
+div.fenestra_graph div.axis_left,
+div.fenestra_graph div.axis_right {
   float: left;
   line-height: 1em;
   color: #FFF;
@@ -88,17 +88,17 @@ div.hummingbird_graph div.axis_right {
   top: -5px;
 }
 
-div.hummingbird_graph div.axis_left {
+div.fenestra_graph div.axis_left {
   padding: 0 5px 0 25px;
   text-align: right;
 }
 
-div.hummingbird_graph div.axis_right {
+div.fenestra_graph div.axis_right {
   padding: 0 10px;
 }
 
-#hummingbird_cart_adds div.axis_left,
-#hummingbird_cart_adds div.axis_right {
+#fenestra_cart_adds div.axis_left,
+#fenestra_cart_adds div.axis_right {
   line-height: 0.3em;
 }
 

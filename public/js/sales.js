@@ -14,7 +14,7 @@ Hummingbird.getSales = function() {
       saleDiv.append("<img class='editorial' src='" + editorialImage + "'/>");
       saleDiv.append("<h2>" + name + "</h2>");
 
-      var graph = $("<div class='hummingbird_graph'></div>");
+      var graph = $("<div class='fenestra_graph'></div>");
       graph.append("<div class='req_s'><span class='value'>0</span> pages/sec</div>");
 
       var canvas = $("<canvas width='185' height='70'></canvas>");
@@ -38,7 +38,7 @@ Hummingbird.getSales = function() {
 Hummingbird.resortSales = function() {
   var sortedSales = $("div#sales div.sale").sorted({
     by: function(a) {
-      return parseFloat(a.find('div.hummingbird_graph').attr('data-average')) || -1;
+      return parseFloat(a.find('div.fenestra_graph').attr('data-average')) || -1;
     }
   });
 

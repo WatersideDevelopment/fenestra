@@ -1,19 +1,19 @@
-$.fn.hummingbirdGraph = function(socket, options) {
+$.fn.fenestraGraph = function(socket, options) {
   if(this.length == 0) { return; }
 
   this.each(function() {
-    new Hummingbird.Graph($(this), socket, options);
+    new Fenestra.Graph($(this), socket, options);
   });
 
   return this;
 };
 
 
-if(!Hummingbird) { var Hummingbird = {}; }
+if(!Fenestra) { var Fenestra = {}; }
 
-Hummingbird.Graph = function(element, socket, options) {
-  if ( !(this instanceof Hummingbird.Graph) ) {
-    return new Hummingbird.Graph(element, socket, options);
+Fenestra.Graph = function(element, socket, options) {
+  if ( !(this instanceof Fenestra.Graph) ) {
+    return new Fenestra.Graph(element, socket, options);
   }
 
   var defaults = {
@@ -57,9 +57,9 @@ Hummingbird.Graph = function(element, socket, options) {
   this.initialize(options);
 };
 
-Hummingbird.Graph.prototype = new Hummingbird.Base();
+Fenestra.Graph.prototype = new Fenestra.Base();
 
-$.extend(Hummingbird.Graph.prototype, {
+$.extend(Fenestra.Graph.prototype, {
 
   name: "Graph",
 

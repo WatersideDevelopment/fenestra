@@ -1,6 +1,6 @@
-if(!Hummingbird) { var Hummingbird = {}; }
+if(!Fenestra) { var Fenestra = {}; }
 
-Hummingbird.Raw = function(element, socket, callback) {
+Fenestra.Raw = function(element, socket, callback) {
   this.element = element;
   this.socket = socket;
   this.callback = callback;
@@ -10,9 +10,9 @@ Hummingbird.Raw = function(element, socket, callback) {
   this.initialize();
 };
 
-Hummingbird.Raw.prototype = new Hummingbird.Base();
+Fenestra.Raw.prototype = new Fenestra.Base();
 
-$.extend(Hummingbird.Raw.prototype, {
+$.extend(Fenestra.Raw.prototype, {
   name: "Raw",
   onMessage: function(message) {
     this.callback(message);

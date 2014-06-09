@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Hummingbird</title>
+  <title>Fenestra</title>
 
-  <meta name="description" content="Hummingbird is an open source real time analytics app.">
+  <meta name="description" content="Fenestra is an open source real time analytics & display app.">
 
   <link rel="stylesheet" media="all" href="css/main.css" />
   <link rel="stylesheet" media="all" href="css/map.css" />
@@ -35,15 +35,13 @@
 
   <div class="topbar">
     <div class="header">
-      <h1>Hummingbird</h1>
+      <h1>Fenestra</h1>
 
       <div class="tagline">Real time web stats</div>
 
-      <button id="test_it">Send test traffic</button>
-      <button id="test_cart">Send "cart_add" event</button>
     </div>
 
-    <div class="hummingbird_graph" id="total">
+    <div class="fenestra_graph" id="total">
       <div class="graph"></div>
       <div class="axis_left"></div>
       <div class="axis_right"></div>
@@ -55,7 +53,7 @@
 
   <div style="clear: both;"></div>
 
-  <div id="map_container" class="hummingbird_map"></div>
+  <div id="map_container" class="fenestra_map"></div>
 
   <script>
     $(document).ready(function() {
@@ -63,10 +61,10 @@
       // a different host
       var WS_SERVER = "http://" + document.location.host.toString();
 
-      var socket = new Hummingbird.WebSocket(WS_SERVER);
+      var socket = new Fenestra.WebSocket(WS_SERVER);
       socket.connect();
 
-      $("#total").hummingbirdGraph(socket,
+      $("#total").fenestraGraph(socket,
                                  {
                                    from: "view_totals",
                                    bgLineColor: "#514e57",
@@ -78,15 +76,15 @@
                                  });
 
 
-      $("#total h2.graph_title span.value").hummingbirdCount(socket,
+      $("#total h2.graph_title span.value").fenestraCount(socket,
                                                              {
                                                                from: "view_totals",
                                                                every: 10
                                                              });
 
-      $("#map_container").hummingbirdMap(socket, { from: "locations" });
+      $("#map_container").fenestraMap(socket, { from: "locations" });
 
-      new Hummingbird.Logger(window,
+      new Fenestra.Logger(window,
                              socket,
                              {
                                from: "view_totals",

@@ -1,6 +1,6 @@
-if(!Hummingbird) { var Hummingbird = {}; }
+if(!Fenestra) { var Fenestra = {}; }
 
-Hummingbird.WebSocket = function(url, token) {
+Fenestra.WebSocket = function(url, token) {
   this.url = url;
   this.token = token;
   this.state = "stopped";
@@ -8,7 +8,7 @@ Hummingbird.WebSocket = function(url, token) {
   this.emitted = [];
 };
 
-Hummingbird.WebSocket.prototype = {
+Fenestra.WebSocket.prototype = {
   // WebSocket callbacks
   onClose: function() {
     var self = this;

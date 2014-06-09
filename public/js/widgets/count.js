@@ -1,17 +1,17 @@
-$.fn.hummingbirdCount = function(socket, options) {
+$.fn.fenestraCount = function(socket, options) {
   if(this.length == 0) { return; }
 
   this.each(function() {
-    new Hummingbird.Count($(this), socket, options);
+    new Fenestra.Count($(this), socket, options);
   });
 
   return this;
 };
 
 
-if(!Hummingbird) { var Hummingbird = {}; }
+if(!Fenestra) { var Fenestra = {}; }
 
-Hummingbird.Count = function(element, socket, options) {
+Fenestra.Count = function(element, socket, options) {
   this.element = element;
   this.socket = socket;
 
@@ -25,9 +25,9 @@ Hummingbird.Count = function(element, socket, options) {
   this.initialize();
 };
 
-Hummingbird.Count.prototype = new Hummingbird.Base();
+Fenestra.Count.prototype = new Fenestra.Base();
 
-$.extend(Hummingbird.Count.prototype, {
+$.extend(Fenestra.Count.prototype, {
   name: "Count",
   onMessage: function(value, average) {
     this.element.text(average.toFixed(this.options.decimalPlaces));

@@ -1,16 +1,16 @@
-$.fn.hummingbirdMap = function(socket, options) {
+$.fn.fenestraMap = function(socket, options) {
   if(this.length == 0) { return; }
 
   this.each(function() {
-    new Hummingbird.Map($(this), socket, options);
+    new Fenestra.Map($(this), socket, options);
   });
 
   return this;
 };
 
-if(!Hummingbird) { var Hummingbird = {}; }
+if(!Fenestra) { var Fenestra = {}; }
 
-Hummingbird.Map = function(element, socket, options) {
+Fenestra.Map = function(element, socket, options) {
   this.element = element;
   this.socket = socket;
 
@@ -43,7 +43,7 @@ Hummingbird.Map = function(element, socket, options) {
     .add(this.po.interact());
 
   this.map.add(this.po.image()
-          .url(this.po.url("//movableink-hummingbird-tiles.s3.amazonaws.com/hummingbird-dark" + doubleSize + "/{Z}/{X}/{Y}.png"))
+          .url(this.po.url("/images/polymap/dark" + doubleSize + "/{Z}/{X}/{Y}.png"))
           .zoom(function(z) { return z + zoomFactor; return 2; }));
 
   this.map.add(this.po.compass()
@@ -77,9 +77,9 @@ Hummingbird.Map = function(element, socket, options) {
 };
 
 
-Hummingbird.Map.prototype = new Hummingbird.Base();
+Fenestra.Map.prototype = new Fenestra.Base();
 
-$.extend(Hummingbird.Map.prototype, {
+$.extend(Fenestra.Map.prototype, {
   name: "Map",
 
   onMessage: function(value, average) {
@@ -149,7 +149,7 @@ $.extend(Hummingbird.Map.prototype, {
                 .classed("label", true)
                 .attr("transform", "scale(0.8) translate(0, 10)")
                 .transition()
-                .attr("d", function(d) { return Hummingbird.Map.bubble(d.label.length * 5 + 15, 12); })
+                .attr("d", function(d) { return Fenestra.Map.bubble(d.label.length * 5 + 15, 12); })
                 .attr("transform", "scale(1) translate(0, -5)")
 
               newElement.append("text")
@@ -191,7 +191,7 @@ $.extend(Hummingbird.Map.prototype, {
 
 });
 
-Hummingbird.Map.bubble = function(textWidth, textHeight, angle, notch, direction) {
+Fenestra.Map.bubble = function(textWidth, textHeight, angle, notch, direction) {
     var bg;
 
     if (textWidth == null) textWidth = 200;
