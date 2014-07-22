@@ -1,12 +1,10 @@
-
-config = require('./lib/config');
-
-var tracker = require('./lib/tracker'),
-	dashboard = null;
+var config = require('./lib/config'),
+    tracker = require('./lib/tracker'),
+    dashboard = null;
 
 // Setup tracker port listener...
 if (typeof config.dashboard != true) {
-var dashboard = require('./lib/dashboard');
+    dashboard = require('./lib/dashboard');
     // Setup dashboard port listener
     dashboard.listen(config.dashboard_port, config.dashboard_address);
     console.log("Dashboard listening on http://" + (config.dashboard_address || "*") + ":" + config.dashboard_port + ".");

@@ -20,3 +20,4 @@ module.exports = config = {
     "dashboard_address" : "127.0.0.1",
     "dashboard_port" : 8811
 }
+// FenestraTracker.track=function (env){"undefined"==typeof env&&(env={}),env.u=document.location.href,env.bw=window.innerWidth,env.bh=window.innerHeight,document.referrer&&""!=document.referrer&&(env.ref=document.referrer),env.rnd=Math.floor(1e13*Math.random());var params=[];for(var key in env)env.hasOwnProperty(key)&&params.push(encodeURIComponent(key)+"="+encodeURIComponent(env[key]));var img=new Image;img.src="http://localhost:8801/fenestra/_.gif?"+params.join("&")} 
