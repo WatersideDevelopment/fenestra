@@ -23,7 +23,6 @@ FenestraTracker = {
       }
     }
 
-    // replace 'localhost:8080' with hummingbird's URL
     var img = new Image();
     img.src = '/fenestra/_.gif?' + params.join('&');
   }
