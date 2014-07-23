@@ -9,7 +9,8 @@ var knex = FenestraBookshelf.knex;
 // Table Creation Promises
 var tablePromises = [];
 
-// Chapters Table
+
+// Events Table
 tablePromises.push(new Promise(function (resolve) {
     knex.schema.hasTable('event').then(function (exists) {
         if (exists) {

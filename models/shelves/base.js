@@ -8,7 +8,7 @@ BaseModel = Bookshelf.MySQL = Bookshelf.initialize(dbConfig.config());
 
 // Base Model
 BaseModel.Model = Bookshelf.MySQL.Model.extend({
-    hasTimestamps: ['created_at']
+    hasTimestamps: ['created_at', 'updated_at']
 });
 
 // Exports
