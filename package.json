@@ -3,6 +3,7 @@
   "description": "A node.js statistics server",
   "version": "0.2.0-17",
   "scripts": {
+	"install": "node models/database/setup.js",
     "start": "node index.js"
   },
   "dependencies": {
@@ -10,6 +11,7 @@
     "bookshelf": "^0.7.6",
     "geoip": "0.4.12",
     "knex": "^0.6.22",
+    "mysql": "^2.4.1",
     "node-static": "0.5.9",
     "socket.io": "0.9.6"
   },
