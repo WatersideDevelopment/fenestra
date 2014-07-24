@@ -18,7 +18,7 @@ module.exports = config = {
 
     // What does the dashboard live upon?
     "dashboard_address" : "127.0.0.1",
-    "dashboard_port" : 8811
+    "dashboard_port" : 8811,
 
 
     // Should be verbose on stdIO?

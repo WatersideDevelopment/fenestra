@@ -1,6 +1,6 @@
 'use strict';
 
-var config = require('../../lib/config.js');
+var config = require('../../lib/config');
 
 /**
  * Database Config
@@ -9,7 +9,7 @@ var config = require('../../lib/config.js');
 module.exports.config = function() {
     return {
         client: 'mysql',
-        debug: true,
+        debug: false,
         connection: {
             host: config.dbHost,
             user: config.dbUser,

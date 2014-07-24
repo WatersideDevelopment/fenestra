@@ -19,4 +19,3 @@ module.exports = {
     Event: FenestraBookshelf.model('Event', Event),
     Events: FenestraBookshelf.collection('Events', Events)
 };
-w

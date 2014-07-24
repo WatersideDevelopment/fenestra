@@ -40,6 +40,7 @@ tablePromises.push(new Promise(function (resolve) {
             knex.schema.createTable('session', function (t) {
                 t.increments('id');
                 t.integer('user_id');
+                t.string('key');
                 t.boolean('authed');
                 t.timestamps();
             }).then(function () {
