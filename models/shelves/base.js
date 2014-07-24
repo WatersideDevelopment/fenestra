@@ -1,15 +1,17 @@
 var Bookshelf = require('bookshelf'),
     dbConfig = require('../database/config'),
-    BaseModel;
+    FenestraBookshelf;
 
 // Initialise
-BaseModel = Bookshelf.MySQL = Bookshelf.initialize(dbConfig.config());
+FenestraBookshelf = Bookshelf.MySQL = Bookshelf.initialize(dbConfig.config());
 
+// Registry Plugin
+FenestraBookshelf.plugin('registry');
 
 // Base Model
-BaseModel.Model = Bookshelf.MySQL.Model.extend({
+FenestraBookshelf.Model = Bookshelf.MySQL.Model.extend({
     hasTimestamps: ['created_at', 'updated_at']
 });
 
 // Exports
-module.exports = BaseModel;
+module.exports = FenestraBookshelf;

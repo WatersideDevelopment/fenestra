@@ -1,21 +1,22 @@
 'use strict';
 
-var BaseModel = require('./base');
+var FenestraBookshelf = require('./base');
 
-var Session = BaseModel.Model.extend({
+var Session = FenestraBookshelf.Model.extend({
     tableName: 'session',
     // Constructor Override
     constructor: function () {
         // Call Parent
-        BaseModel.Model.apply(this, arguments);
+        FenestraBookshelf.Model.apply(this, arguments);
     }
+
 });
 
-var Sessions = BaseModel.Collection.extend({
+var Sessions = FenestraBookshelf.Collection.extend({
     model: Session
 });
 
 module.exports = {
-    Session: BaseModel.model('Session', Session),
-    Sessions: BaseModel.collection('Sessions', Sessions)
+    Session: FenestraBookshelf.model('Session', Session),
+    Sessions: FenestraBookshelf.collection('Sessions', Sessions)
 };

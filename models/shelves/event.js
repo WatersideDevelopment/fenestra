@@ -1,21 +1,22 @@
 'use strict';
 
-var BaseModel = require('./base');
+var FenestraBookshelf = require('./base');
 
-var Event = BaseModel.Model.extend({
+var Event = FenestraBookshelf.Model.extend({
     tableName: 'event',
     // Constructor Override
     constructor: function () {
         // Call Parent
-        BaseModel.Model.apply(this, arguments);
+        FenestraBookshelf.Model.apply(this, arguments);
     }
 });
 
-var Events = BaseModel.Collection.extend({
+var Events = FenestraBookshelf.Collection.extend({
     model: Event
 });
 
 module.exports = {
-    Event: BaseModel.model('Event', Event),
-    Events: BaseModel.collection('Events', Events)
+    Event: FenestraBookshelf.model('Event', Event),
+    Events: FenestraBookshelf.collection('Events', Events)
 };
+w

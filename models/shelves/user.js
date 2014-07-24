@@ -1,31 +1,31 @@
 'use strict';
 
-var BaseModel = require('./base');
+var FenestraBookshelf = require('./base');
 var Promise = require('bluebird');
 
-var User = BaseModel.Model.extend({
+var User = FenestraBookshelf.Model.extend({
     tableName: 'user',
     // Constructor Override
     constructor: function () {
         // Call Parent
-        BaseModel.Model.apply(this, arguments);
+        FenestraBookshelf.Model.apply(this, arguments);
 
         // Post-Destroy Hook For Cleaning Up Pivot Table
         this.on('destroying', function (model) {
-            return model.related('events').fetch().then(function (eventCollection) {
-                return Promise.all(eventCollection.map(function (eventModel) {
-                    return eventModel.destroy();
+            return model.related('sessions').fetch().then(function (sessionCollection) {
+                return Promise.all(sessionCollection.map(function (sessionModel) {
+                    return sessionModel.destroy();
                 }));
             });
         });
     }
 });
 
-var Users = BaseModel.Collection.extend({
+var Users = FenestraBookshelf.Collection.extend({
     model: User
 });
 
 module.exports = {
-    User: BaseModel.model('User', User),
-    Users: BaseModel.collection('Users', Users)
+    User: FenestraBookshelf.model('User', User),
+    Users: FenestraBookshelf.collection('Users', Users)
 };
