@@ -1,0 +1,6 @@
+#!/bin/sh
+cd `dirname $0`
+LOGFILE=`pwd | cut -d/ -f4`
+echo Starting Fenestra from `pwd` - logfile output at /var/log/$LOGFILE.log
+sudo -u www-data node index.js >> /var/log/$LOGFILE.log
+
