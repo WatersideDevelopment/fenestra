@@ -88,8 +88,12 @@ $.extend(Fenestra.Map.prototype, {
 
       for(var i in value) {
         var geo = value[i];
-        if(typeof(geo.latitude) == "undefined" || ! geo.city || geo.city == "") { continue; }
-        geo.label = [geo.city, (geo.country == 'US') ? geo.region : geo.country].join(', ');
+          if(typeof(geo.latitude) == "undefined") { continue; }
+          geo.label = "";
+          if(geo.city && geo.city != "")
+              geo.label = geo.city+", ";
+
+          geo.label = geo.label + ((geo.country == 'US') ? geo.region : geo.country);
 
         // Remove duplicates
         for(var i = 0, len = this.data.length; i < len; i++) {

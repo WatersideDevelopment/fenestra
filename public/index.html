@@ -2,110 +2,106 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
+    <meta charset="utf-8">
 
-  <title>Fenestra</title>
+    <title>Fenestra</title>
 
-  <meta name="description" content="Fenestra is an open source real time analytics & display app.">
+    <meta name="description" content="Fenestra is an open source real time analytics & display app.">
 
-  <link rel="stylesheet" media="all" href="css/main.css" />
-  <link rel="stylesheet" media="all" href="css/map.css" />
-  <link rel="stylesheet" media="all" href="css/weekly.css" />
+    <link rel="stylesheet" media="all" href="css/main.css"/>
+    <link rel="stylesheet" media="all" href="css/map.css"/>
+    <link rel="stylesheet" media="all" href="css/weekly.css"/>
 
-  <script src="js/jquery-1.7.min.js"></script>
+    <script src="js/jquery-1.7.min.js"></script>
 
-  <script src="socket.io/socket.io.js"></script>
+    <script src="socket.io/socket.io.js"></script>
 
-  <script src="js/helpers.js"></script>
-  <script src="js/websocket.js"></script>
-  <script src="js/d3.v2.js"></script>
-  <script src="js/polymaps.js"></script>
-  <script src="js/polymaps-extras.js"></script>
+    <script src="js/helpers.js"></script>
+    <script src="js/websocket.js"></script>
+    <script src="js/d3.v2.js"></script>
+    <script src="js/polymaps.js"></script>
+    <script src="js/polymaps-extras.js"></script>
 
-  <script src="js/widgets/base.js"></script>
-  <script src="js/widgets/logger.js"></script>
-  <script src="js/widgets/graph.js"></script>
-  <script src="js/widgets/count.js"></script>
-  <script src="js/widgets/map.js"></script>
+    <script src="js/widgets/base.js"></script>
+    <script src="js/widgets/logger.js"></script>
+    <script src="js/widgets/graph.js"></script>
+    <script src="js/widgets/count.js"></script>
+    <script src="js/widgets/map.js"></script>
 
-  <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
 </head>
 
 <body>
 
-  <div class="topbar">
+<div class="topbar">
     <div class="header">
-      <h1>Fenestra</h1>
+        <h1>Fenestra</h1>
 
-      <div class="tagline">Real time web stats</div>
+        <div class="tagline">Real time web stats</div>
 
     </div>
 
     <div class="fenestra_graph" id="total">
-      <div class="graph"></div>
-      <div class="axis_left"></div>
-      <div class="axis_right"></div>
+        <div class="graph"></div>
+        <div class="axis_left"></div>
+        <div class="axis_right"></div>
     </div>
-  </div>
+</div>
 
-  <div style="clear: both;"></div>
-
-
-  <div style="clear: both;"></div>
-
-  <div id="map_container" class="fenestra_map"></div>
-
-  <script>
-    $(document).ready(function() {
-      // change this to your host if the websocket server is on
-      // a different host
-      var WS_SERVER = "http://" + document.location.host.toString();
-
-      var socket = new Fenestra.WebSocket(WS_SERVER);
-      socket.connect();
-
-      $("#total").fenestraGraph(socket,
-                                 {
-                                   from: "view_totals",
-                                   bgLineColor: "#514e57",
-                                   tickLineColor: "#64616a",
-                                   lineColors: {
-                                     def: "#ac84ed"
-                                   },
-                                   graphHeight: 80
-                                 });
+<div style="clear: both;"></div>
 
 
-      $("#total h2.graph_title span.value").fenestraCount(socket,
-                                                             {
-                                                               from: "view_totals",
-                                                               every: 10
-                                                             });
+<div style="clear: both;"></div>
 
-      $("#map_container").fenestraMap(socket, { from: "locations" });
+<div id="map_container" class="fenestra_map"></div>
 
-      new Fenestra.Logger(window,
-                             socket,
-                             {
-                               from: "view_totals",
-                               every: 500
-                             });
+<script>
+    $(document).ready(function () {
+        // change this to your host if the websocket server is on
+        // a different host
+        var WS_SERVER = "http://" + document.location.host.toString();
 
-      $("#test_it").click(function(e) {
-        e.preventDefault();
+        var socket = new Fenestra.WebSocket(WS_SERVER);
+        socket.connect();
 
-        var img = document.createElement('img');
-        img.src = "/tracking_pixel.gif?_=" + Math.random();
-      });
+        $("#total").fenestraGraph(socket, {
+            from: "view_totals",
+            bgLineColor: "#514e57",
+            tickLineColor: "#64616a",
+            lineColors: {
+                def: "#ac84ed"
+            },
+            graphHeight: 80
+        });
 
-      $("#test_cart").click(function(e) {
-        e.preventDefault();
 
-        var img = document.createElement('img');
-        img.src = "/tracking_pixel.gif?event=cart_add&_=" + Math.random();
-      });
+        $("#total h2.graph_title span.value").fenestraCount(socket, {
+            from: "view_totals",
+            every: 10
+        });
+
+        $("#map_container").fenestraMap(socket, {from: "locations"});
+
+        new Fenestra.Logger(window, socket, {
+            from: "view_totals",
+            every: 500
+        });
+
+        $("#test_it").click(function (e) {
+            e.preventDefault();
+
+            var img = document.createElement('img');
+            img.src = "/tracking_pixel.gif?_=" + Math.random();
+        });
+
+        $("#test_cart").click(function (e) {
+            e.preventDefault();
+
+            var img = document.createElement('img');
+            img.src = "/tracking_pixel.gif?event=cart_add&_=" + Math.random();
+        });
     });
-  </script>
+</script>
 
 </body>
 </html>

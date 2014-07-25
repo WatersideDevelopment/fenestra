@@ -64,7 +64,6 @@ Fenestra.Base.prototype = {
 
   addToAverage: function(newValue) {
     var averageCount = this.options.averageOver * this.options.ratePerSecond;
-
     this.averageLog.push(newValue);
     if(this.averageLog.length > averageCount) {
       this.averageLog.shift();
@@ -73,7 +72,6 @@ Fenestra.Base.prototype = {
 
   average: function() {
     if(this.averageLog.length == 0) { return 0; }
-
     return this.averageLog.sum() * 1.0 / this.averageLog.length * this.options.ratePerSecond;
   },
 
@@ -89,7 +87,5 @@ Fenestra.Base.prototype = {
     }
     // Give up
     return true;
-  },
-
-
+  }
 };
