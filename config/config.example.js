@@ -31,6 +31,9 @@ module.exports = config = {
     "dbPass" : "you_secret_password",
     "dbName" : "fenestra_sitename",
     "dbHost" : "localhost",
-    "dbPort" : 3306
-}
+    "dbPort" : 3306,
+
+    // When IP is not GeoIPable, where should we presume we are?
+    "failIP" : "8.8.8.8" // Mountain View, Cal-if-or-nigh-hay!
+};
 // FenestraTracker.track=function (env){"undefined"==typeof env&&(env={}),env.u=document.location.href,env.bw=window.innerWidth,env.bh=window.innerHeight,document.referrer&&""!=document.referrer&&(env.ref=document.referrer),env.rnd=Math.floor(1e13*Math.random());var params=[];for(var key in env)env.hasOwnProperty(key)&&params.push(encodeURIComponent(key)+"="+encodeURIComponent(env[key]));var img=new Image;img.src="http://localhost:8801/fenestra/_.gif?"+params.join("&")} 
