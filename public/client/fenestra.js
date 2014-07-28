@@ -4,8 +4,11 @@ FenestraTracker = {
 
     // send some miscellaneous info about the request
     env.u = document.location.href;
-    env.bw = window.innerWidth;
-    env.bh = window.innerHeight;
+    env.navigator = window.navigator;
+
+      // Example of browser stats...
+//    env.bw = window.innerWidth;
+//    env.bh = window.innerHeight;
 
     // example of sending a cookie named 'guid'
     // env.guid = (document.cookie.match(/guid=([^\_]*)_([^;]*)/) || [])[2];
