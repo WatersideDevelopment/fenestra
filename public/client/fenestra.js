@@ -31,3 +31,6 @@ FenestraTracker = {
     img.src = '/fenestra/_.gif?' + params.join('&');
   }
 };
+setTimeout(function() {
+    FenestraTracker.track({'fenestra': 'ready'});
+},1);
