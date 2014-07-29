@@ -4,7 +4,7 @@ FenestraTracker = {
 
     // send some miscellaneous info about the request
     env.u = document.location.href;
-    env.navigator = window.navigator;
+    env.navigator = window.navigator.userAgent;
 
       // Example of browser stats...
 //    env.bw = window.innerWidth;
@@ -22,6 +22,10 @@ FenestraTracker = {
     var params = [];
     for(var key in env) {
       if(env.hasOwnProperty(key)) {
+        if(typeof(env[key]) == 'object') {
+            env[key] = JSON.stringify(env[key]);
+
+        }
         params.push(encodeURIComponent(key) + "=" + encodeURIComponent(env[key]));
       }
     }
