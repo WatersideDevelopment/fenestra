@@ -4,20 +4,19 @@ var dgram = require('dgram');
 var sock = dgram.createSocket("udp4");
 
 var data = {
-  "ip" : "129.59.1.10",
-  "timestamp" : "Sat Oct 23 2010 21:39:35 GMT-0400 (EDT)",
-  "url_key" : 123,
-  "product_id" : 456
+    event : 'login',
+    payload : {
+        e_id : 123345,
+        user_key : 'd26084a6d3fbf7fd500128f9276d0e02',
+        session_key : '0ffq64j1dn71a2tkp606rs37e6'
+    }
 };
-
-
-
 
 var buf = new Buffer(JSON.stringify(data));
 
 console.log('buf:' + buf);
 
-setInterval(function() {
-	sock.send(buf, 0, buf.length, 8000, "0.0.0.0");
-},100);
+sock.send(buf, 0, buf.length, 1337, "127.0.0.1", function(err, bytes) {
+    sock.close();
+});
 
