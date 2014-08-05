@@ -16,5 +16,6 @@ console.log("Tracker listening on http://" + (config.tracking_address || "*") + 
 
 // Setup UDP tracking
 if (typeof config.udp_tracking_port == 'number') {
-  tracker.listenUdp(config.udp_tracking_port, config.udp_tracking_address);
+    console.log("Starting up UDP server...");
+    tracker.listenUdp(config.udp_tracking_port, config.udp_tracking_address);
 }
