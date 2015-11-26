@@ -19,7 +19,7 @@ Requirements
 Installation
 --------------
 
-    git clone git://github.com/Occa-Labs/fenestra.git
+    git clone git://github.com/WatersideDevelopment/fenestra.git
     cd fenestra
 
     # Use npm to install the dependencies
