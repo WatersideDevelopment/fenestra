@@ -22,7 +22,7 @@ FenestraTracker = {
         }
 
         var xhr = new XMLHttpRequest();
-        App.options.BASEURL = "https://dtns-tvos.xalior.com/";
+//        App.options.BASEURL = "https://my-fenestra-server.xalior.com/";  // when testing on loopback tvos simulator
         var url = `${App.options.BASEURL}fenestra/_.gif?` + params.join("&");
         console.log(url);
 //        console.log(xhr);
