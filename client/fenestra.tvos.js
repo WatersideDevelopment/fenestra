@@ -1,40 +1,43 @@
 FenestraTracker = {
-  track: function(env) {
-    if(typeof(env) == "undefined") { env = {}; }
-
-    // send some miscellaneous info about the request
-    env.u = document.location.href;
-    env.navigator = App.userAgent || "TVOS";
-
-      // Example of browser stats...
-//    env.bw = window.innerWidth;
-//    env.bh = window.innerHeight;
-
-    // example of sending a cookie named 'guid'
-    // env.guid = (document.cookie.match(/guid=([^\_]*)_([^;]*)/) || [])[2];
-
-    if(document.referrer && document.referrer != "") {
-      env.ref = document.referrer;
-    }
-
-    env.rnd = Math.floor(Math.random() * 10e12);
-
-    var params = [];
-    for(var key in env) {
-      if(env.hasOwnProperty(key)) {
-        if(typeof(env[key]) == 'object') {
-            env[key] = JSON.stringify(env[key]);
-
+    track: function (env) {
+        if (typeof(env) == "undefined") {
+            env = {};
         }
-        params.push(encodeURIComponent(key) + "=" + encodeURIComponent(env[key]));
-      }
+
+        // send some miscellaneous info about the request
+        env.navigator = App.userAgent || "TVOS";
+
+        env.rnd = Math.floor(Math.random() * 10e12);
+
+        var params = [];
+        JSON.stringify(env)
+        for (var key in env) {
+            if (env.hasOwnProperty(key)) {
+                if (typeof(env[key]) == 'object') {
+                    env[key] = JSON.stringify(env[key]);
+
+                }
+                params.push(encodeURIComponent(key) + "=" + encodeURIComponent(env[key]));
+            }
+        }
+
+        var xhr = new XMLHttpRequest();
+        App.options.BASEURL = "https://dtns-tvos.xalior.com/";
+        var url = `${App.options.BASEURL}fenestra/_.gif?` + params.join("&");
+        console.log(url);
+//        console.log(xhr);
+
+        xhr.open("GET", url);
+        xhr.send();
     }
-	
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET'. '/fenestra/_.gif?' + params.join('&'));
-    xhr.send();
-  }
 };
-setTimeout(function() {
-    FenestraTracker.track({'fenestra': 'ready'});
-},1);
+setTimeout(function () {
+    FenestraTracker.track(
+        {
+            'event': 'DTNS',
+            'payload': {
+                    'action': 'loading'
+            }
+        }
+    );
+}, 1);
