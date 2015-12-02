@@ -59,7 +59,7 @@
     $(document).ready(function () {
         // change this to your host if the websocket server is on
         // a different host
-        var WS_SERVER = "http://" + document.location.host.toString();
+        var WS_SERVER = "//" + document.location.host.toString();
 
         var socket = new Fenestra.WebSocket(WS_SERVER);
         socket.connect();
